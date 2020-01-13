@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-
+"""\
+THIS CODE IS SHIT, It's a sample http server to catch HTTP uploads from keylogger.
+Some obvious editing required.
+"""
 import gevent.pywsgi
 from gevent.pywsgi import WSGIServer
 # import gevent
