@@ -154,6 +154,7 @@ def main(http_enabled=False, ws_enabled=True):
     presses = Presses()
     key_logger = KeyLogger()
     http_log = HttpLogger(url='https://term.wtf/')
+    # http_log = HttpLogger(url='http://localhost:8080/lol/lol')
     ws = WsStream(uri="ws://localhost:8765")
 
     if debug:
