@@ -1,7 +1,7 @@
 # EvilPyKeyvil
 Badass Python3 Keylogger With Live WebSocket Stream &amp; HTTP Uploader
 
-<p>This program is a pure python3 powered keylogger, which supports both live websocket streaming of keypresses back to a specified server, and periodic uploads of captchured keystrokes via HTTP post requests to a sprunge like server (included is a sample HTTP server for catching post requests as well as websocket client for captchuring live stream of keys.
+<p>This program is a pure python3 powered keylogger, which supports both live websocket streaming of keypresses back to a specified server, and periodic uploads of captchured keystrokes via HTTP post requests to a sprunge like server (included is a sample HTTP server for catching post requests as well as websocket client for captchuring live stream of keys.)
 </p>
 
 <p> EvilPyKeyvil is badass because you can see the victim type in real time via websocket. Because it is written purely in Python3, it can be packed into an executable with pyinstaller or py2exe for easy distribution.
